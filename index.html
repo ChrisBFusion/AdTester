@@ -13,14 +13,20 @@
         gads.type = "text/javascript";
         var useSSL = "https:" == document.location.protocol;
         gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
-        var node =document.getElementsByTagName("script")[0];
+        var node = document.getElementsByTagName("script")[0];
         node.parentNode.insertBefore(gads, node);
       })();
     </script>
     <script type="text/javascript">
       googletag.cmd.push(function() {
-        var adSlot1 = googletag.defineSlot('/6355419/Travel/Europe/France/Paris',[300, 250], "banner1");
-        adSlot1.addService(googletag.pubads());
+        var adSlotRight = googletag.defineSlot('/6355419/Travel/Europe/France/Paris',[300, 250], "banner-right");
+        var adSlotLeft = googletag.defineSlot('/6355419/Travel/Europe/France/Paris',[300, 250], "banner-left");
+        var adSlotTop = googletag.defineSlot('/6355419/Travel/Europe/France/Paris',[728, 90], "banner-top");
+        var adSlotBottom = googletag.defineSlot('/6355419/Travel/Europe/France/Paris',[728, 90], "banner-bottom");
+        adSlotRight.addService(googletag.pubads());
+        adSlotLeft.addService(googletag.pubads());
+        adSlotTop.addService(googletag.pubads());
+        adSlotBottom.addService(googletag.pubads());
         googletag.enableServices();
       });
     </script>
@@ -63,25 +69,34 @@
       }
       header, footer, article, nav, aside {
         padding: 1em;
-      }
-      aside {
         position: relative;
       }
     </style>
   </head>
   <body>
-    <nav class="outer-col-1">Nav</nav>
+    <nav id="banner-left" class="outer-col-1">
+      <script type="text/javascript">
+        googletag.cmd.push(function() { googletag.display('banner-left'); });
+      </script>
+    </nav>
     <div class="outer-col-2">
-      <header>Header</header>
+      <header id="banner-top">
+        <script type="text/javascript">
+          googletag.cmd.push(function() { googletag.display('banner-top'); });
+        </script>
+      </header>
       <div class="inner-row">
         <div class="inner-col">
         <article>Article</article>
-        <footer>Footer</footer>
-        </div>
-        <aside id="banner1">
-          <iframe src="https://s0.2mdn.net/ads/richmedia/studio/pv2/60401047/20171018132203061/index.html?e=325&renderingType=2&leftOffset=0&topOffset=0&t=1#c=qvj8FzQgFH" id="200_210_html_expanding_0.if" style="border: 0px none; vertical-align: bottom; width: 300px; height: 250px; left: 0px; top: 0px; position: absolute;" scrolling="no" allowfullscreen="true"></iframe>
+        <footer id="banner-bottom">
           <script type="text/javascript">
-            googletag.cmd.push(function() { googletag.display('banner1'); });
+            googletag.cmd.push(function() { googletag.display('banner-bottom'); });
+          </script>
+        </footer>
+        </div>
+        <aside id="banner-right">
+          <script type="text/javascript">
+            googletag.cmd.push(function() { googletag.display('banner-right'); });
           </script>
         </aside>
       </div>
